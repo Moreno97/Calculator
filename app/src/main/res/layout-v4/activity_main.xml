@@ -259,24 +259,12 @@
         </TableRow>
     </TableLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:textSize="48sp"
-        android:maxLines="1"
-        android:layout_height="120dp"
-
-        android:layout_width="320dp"
-        android:textAllCaps="false"
-        android:textAlignment="textEnd"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentEnd="true" />
-
     <TableLayout
         android:layout_width="match_parent"
         android:background="@android:color/holo_green_light"
-        android:layout_height="135dp"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_height="72dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -317,6 +305,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:textSize="48sp"
+        android:maxLines="1"
+        android:layout_height="120dp"
+
+        android:layout_width="320dp"
+        android:textAllCaps="false"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
