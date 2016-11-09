@@ -10,7 +10,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvResult;
     Button b1;
-    String [] botones = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."};
     int result = 0; // Guardamos el resultado de las operaciones realizadas.
 
     @Override
@@ -22,61 +21,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button0:
-                tvResult.setText(tvResult.getText() + botones[0]);
-                break;
-            case R.id.button1:
-                tvResult.setText(tvResult.getText() + botones[1]);
-                break;
-            case R.id.button2:
-                tvResult.setText(tvResult.getText() + botones[2]);
-                break;
-            case R.id.button3:
-                tvResult.setText(tvResult.getText() + botones[3]);
-                break;
-            case R.id.button4:
-                tvResult.setText(tvResult.getText() + botones[4]);
-                break;
-            case R.id.button5:
-                tvResult.setText(tvResult.getText() + botones[5]);
-                break;
-            case R.id.button6:
-                tvResult.setText(tvResult.getText() + botones[6]);
-                break;
-            case R.id.button7:
-                tvResult.setText(tvResult.getText() + botones[7]);
-                break;
-            case R.id.button8:
-                tvResult.setText(tvResult.getText() + botones[8]);
-                break;
-            case R.id.button9:
-                tvResult.setText(tvResult.getText() + botones[9]);
-                break;
-            case R.id.buttonComa:
-                tvResult.setText(tvResult.getText() + botones[10]);
-                break;
-            /*case R.id.buttonDivide:
-                //
-                break;*/
-            case R.id.buttonClear:
-                tvResult.setText("");
-                result = 0;
-                break;
-            //case R.id.buttonMultiply:
-                //
-               // break;
-            case R.id.buttonRest:
-                //
-                break;
-            case R.id.buttonSum:
-                onSum();
-                break;
-            case R.id.buttonResultado:
-                tvResult.setText("" + result);
-                Toast.makeText(this, "El resultado de la operación es " + result, Toast.LENGTH_LONG).show();
-                break;
-        }
+        tvResult.setText(tvResult.getText() + view.getTag().toString());
+    }
+
+    public void onClear(View view) {
+        tvResult.setText("");
+        result = 0;
     }
 
     public void onSum() {
