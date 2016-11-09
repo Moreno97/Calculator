@@ -17,6 +17,8 @@
     <string name="buttonDivide">÷</string>
     <string name="buttonComa">,</string>
     <string name="buttonResultado">=</string>
+    <string name="parentesis">(</string>
+    <string name="parentesis2">)</string>
 
 
 </resources>
