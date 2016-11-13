@@ -19,6 +19,8 @@
     <string name="buttonResultado">=</string>
     <string name="parentesis">(</string>
     <string name="parentesis2">)</string>
+    <string name="delete_number">Delete number</string>
+    <string name="action_settings">Settings</string>
 
 
 </resources>
