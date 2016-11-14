@@ -20,7 +20,18 @@
     <string name="parentesis">(</string>
     <string name="parentesis2">)</string>
     <string name="delete_number">Delete number</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">ABOUT</string>
+    <string name="del">DEL</string>
+    <string name="exponente">x²</string>
+    <string name="realizado_por_antonio">Realizado por Antonio</string>
+    <string name="https_github_com_moreno97_calculator">https://github.com/Moreno97/Calculator</string>
+    <string name="cos">cos</string>
+    <string name="sin">sin</string>
+    <string name="parentesis_left">(</string>
+    <string name="parentesis_right">)</string>
+    <string name="log">log</string>
+    <string name="tan">tan</string>
+    <string name="percent">%</string>
 
 
 </resources>
