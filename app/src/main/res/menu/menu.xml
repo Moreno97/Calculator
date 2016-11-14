@@ -4,6 +4,9 @@
     tools:context=".MainActivity">
 
     <item
+        android:title="@string/settings"
+        android:id="@+id/item_settings" />
+    <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="104"

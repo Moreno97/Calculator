@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- PREFERENCIAS GENERALES -->
+    <PreferenceCategory
+        android:key="@string/pref_gen"
+        android:title="General">
+        <CheckBoxPreference
+            android:key="miniaturas"
+            android:title="@string/pref_miniaturas"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

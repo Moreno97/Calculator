@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
 
+        if (id == R.id.item_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
