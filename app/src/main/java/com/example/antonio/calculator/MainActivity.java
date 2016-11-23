@@ -17,7 +17,7 @@ import android.widget.Toast;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvOperacion, tvResultado;
-    Double num1, num2, resultado;
+    Double num1, num2, resultado, memoria;
     String operador;
     DecimalFormat decimalFormat = new DecimalFormat();
 
@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClear(View view) {
         tvOperacion.setText("");
         tvResultado.setText("");
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_left);
+        tvOperacion.startAnimation(animation);
+        tvResultado.startAnimation(animation);
         clearNumbers();
     }
 
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultado = 0.0;
         num1 = 0.0;
         num2 = 0.0;
+        memoria = 0.0;
     }
 
     public void onDelete(View view) {
@@ -96,16 +100,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             num2 = Double.parseDouble(tvOperacion.getText().toString());
             switch (operador) {
                 case "+":
-                    resultado = num1 + num2;
+                    if (memoria == 0.0) {
+                        resultado = num1 + num2;
+                        memoria = resultado;
+                    } else {
+                        resultado = memoria + num2;
+                    }
                     break;
                 case "-":
-                    resultado = num1 - num2;
+                    if (memoria == 0.0) {
+                        resultado = num1 - num2;
+                        memoria = resultado;
+                    } else {
+                        resultado = memoria + num2;
+                    }
                     break;
                 case "*":
-                    resultado = num1 * num2;
+                    if (memoria == 0.0) {
+                        resultado = num1 * num2;
+                        memoria = resultado;
+                    } else {
+                        resultado = memoria + num2;
+                    }
                     break;
                 case "/":
-                    resultado = num1 / num2;
+                    if (memoria == 0.0) {
+                        resultado = num1 / num2;
+                        memoria = resultado;
+                    } else {
+                        resultado = memoria + num2;
+                    }
                     break;
             }
 
