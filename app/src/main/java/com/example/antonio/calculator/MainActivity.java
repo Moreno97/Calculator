@@ -17,7 +17,7 @@ import android.widget.Toast;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tvOperacion, tvResultado;
-    Double num1, num2, resultado, memoria;
+    Double num1 = 0.0, num2 = 0.0, resultado = 0.0, memoria = 0.0;
     String operador;
     DecimalFormat decimalFormat = new DecimalFormat();
 
@@ -35,12 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.action_settings) {
             Intent about = new Intent(getApplicationContext(), AboutActivity.class);
             startActivity(about);
-            return true;
         }
 
         if (id == R.id.item_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
-            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -59,16 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvOperacion.append(view.getTag().toString());
     }
 
-    public void appendCharacter(View view) {
-        tvOperacion.append(view.getTag().toString());
-    }
-
     public void onClear(View view) {
         tvOperacion.setText("");
         tvResultado.setText("");
-        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_left);
-        tvOperacion.startAnimation(animation);
-        tvResultado.startAnimation(animation);
+
         clearNumbers();
     }
 
@@ -82,8 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onDelete(View view) {
         if (tvOperacion.getText().length() != 0) {
             tvOperacion.setText(tvOperacion.getText().toString().substring(0, tvOperacion.getText().length() - 1));
-            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
-            tvOperacion.startAnimation(animation);
         }
     }
 
@@ -94,41 +84,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationZoom(view);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     public void onResult(View view) {
         try {
             num2 = Double.parseDouble(tvOperacion.getText().toString());
             switch (operador) {
                 case "+":
-                    if (memoria == 0.0) {
-                        resultado = num1 + num2;
+                    if (memoria != 0.0) {
+                        resultado = memoria + num2;
                         memoria = resultado;
                     } else {
-                        resultado = memoria + num2;
+                        resultado = num1 + num2;
+                        memoria = resultado;
                     }
                     break;
                 case "-":
-                    if (memoria == 0.0) {
-                        resultado = num1 - num2;
+                    if (memoria != 0.0) {
+                        resultado = memoria - num2;
                         memoria = resultado;
                     } else {
-                        resultado = memoria + num2;
+                        resultado = num1 - num2;
+                        memoria = resultado;
                     }
                     break;
                 case "*":
-                    if (memoria == 0.0) {
-                        resultado = num1 * num2;
+                    if (memoria != 0.0) {
+                        resultado = memoria * num2;
                         memoria = resultado;
                     } else {
-                        resultado = memoria + num2;
+                        resultado = num1 * num2;
+                        memoria = resultado;
                     }
                     break;
                 case "/":
-                    if (memoria == 0.0) {
-                        resultado = num1 / num2;
+                    if (memoria != 0.0) {
+                        resultado = memoria / num2;
                         memoria = resultado;
                     } else {
-                        resultado = memoria + num2;
+                        resultado = num1 / num2;
+                        memoria = resultado;
                     }
                     break;
             }
@@ -164,7 +158,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 tvResultado.setText(resultado + "");
                 break;
         }
-
         animationZoom(view);
     }
 
@@ -204,7 +197,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             num1 = Double.parseDouble(tvOperacion.getText().toString());
             tvOperacion.setText("");
-
         } catch (Exception e) {
             e.getMessage();
         }

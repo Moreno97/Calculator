@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,4 +32,56 @@
         android:layout_marginTop="28dp"
         android:autoLink="web"
         android:id="@+id/textView4" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/av_bottom_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_inferior_ad_unit_id" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="@string/calculatorInfo"
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:id="@+id/textView5"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        ads:srcCompat="@drawable/fd9404f30a48446fa8e68c649577088c"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/av_bottom_banner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/author" />
+
+    <TextView
+        android:text="@string/info_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_marginBottom="14dp"
+        android:textAlignment="center"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold" />
+
 </RelativeLayout>

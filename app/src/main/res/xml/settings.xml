@@ -3,7 +3,7 @@
     <!-- PREFERENCIAS GENERALES -->
     <PreferenceCategory
         android:key="@string/pref_gen"
-        android:title="General">
+        android:title="@string/pref_gen">
         <CheckBoxPreference
             android:key="miniaturas"
             android:title="@string/pref_miniaturas"
