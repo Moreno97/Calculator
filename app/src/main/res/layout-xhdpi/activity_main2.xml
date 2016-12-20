@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.antonio.calculator.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:background="#212121">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button16"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClickLogarithms"
+                android:tag="@string/tan"
+                android:text="@string/tan"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button17"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onClickLogarithms"
+                android:tag="@string/sin"
+                android:text="@string/sin"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:visibility="visible"
+                android:typeface="normal"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button18"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:onClick="onClickLogarithms"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:text="@string/cos"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:longClickable="true"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:tag="@string/cos" />
+
+            <Button
+                android:id="@+id/button14"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="("
+                android:text="@string/parentesis_left"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button15"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag=")"
+                android:text="@string/parentesis_right"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonClear"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onClear"
+                android:text="@string/buttonErase"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:longClickable="true"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:textStyle="normal|bold"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/buttonSum"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button_operations"
+                android:onClick="onClickSuma"
+                android:tag="+"
+                android:text="@string/buttonSum"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:visibility="visible"
+                android:typeface="normal"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button7"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="7"
+                android:text="@string/button7"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button8"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="8"
+                android:text="@string/button8"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button9"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="9"
+                android:text="@string/button9"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onDelete"
+                android:text="@string/del"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:longClickable="true"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button_operations"
+                android:onClick="onClickResta"
+                android:tag="-"
+                android:text="@string/buttonRest"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:visibility="visible"
+                android:typeface="normal"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="4"
+                android:text="@string/button4"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="5"
+                android:text="@string/button5"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="6"
+                android:text="@string/button6"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonParentesis"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:text="@string/percent"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:longClickable="true"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed"
+                android:onClick="onClickPercentage" />
+
+            <Button
+                android:id="@+id/button10"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button_operations"
+                android:onClick="onClickMultiplicacion"
+                android:tag="x"
+                android:text="@string/buttonMultiply"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:visibility="visible"
+                android:typeface="normal"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="1"
+                android:text="@string/button1"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="2"
+                android:text="@string/button2"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/buttonBarStyle"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="3"
+                android:text="@string/button3"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonResultado"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="#26a69a"
+                android:onClick="onResult"
+                android:text="@string/buttonResultado"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button11"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button_operations"
+                android:onClick="onClickDivision"
+                android:tag="@string/buttonDivide"
+                android:text="@string/buttonDivide"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:visibility="visible"
+                android:typeface="normal"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/buttonComa"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="."
+                android:text="@string/buttonComa"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button0"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onClick"
+                android:tag="0"
+                android:text="@string/button0"
+                android:textSize="30sp"
+                android:typeface="normal"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:background="@drawable/values_button"
+                android:onClick="onClickExponent"
+                android:text="@string/exponente"
+                android:textSize="14sp"
+                android:typeface="normal"
+                android:longClickable="true"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:textStyle="normal|bold"
+                android:layout_weight="1"
+                android:layout_height="75dp"
+                android:fontFamily="sans-serif-condensed" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+
+        android:maxLines="1"
+        android:textAlignment="textEnd"
+        android:textAllCaps="false"
+        android:textSize="37sp"
+        android:fontFamily="sans-serif"
+        tools:text="46"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="42sp"
+        android:fontFamily="sans-serif"
+        tools:text="34+2 (2*3)"
+        android:layout_width="match_parent"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

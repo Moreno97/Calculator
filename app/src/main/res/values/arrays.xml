@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_themes">
+        <item>Material Light</item>
+        <item>Material Dark</item>
+    </string-array>
+</resources>

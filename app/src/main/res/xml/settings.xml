@@ -7,7 +7,29 @@
         <CheckBoxPreference
             android:key="miniaturas"
             android:title="@string/pref_miniaturas"
+            android:summary="Activa la vibración al pulsar las teclas de la calculadora"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="miniaturas"
+            android:title="Desactivar rotación"
+            android:summary="Permite desactivar la rotación de la pantalla y bloquearla"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="miniaturas"
+            android:title="Modo zurdo"
+            android:summary="Cambiar la disposición de los botones"
             android:defaultValue="false" />
     </PreferenceCategory>
+    <PreferenceCategory
+        android:key="@string/pref_gen"
+        android:title="Tema">
+        <ListPreference
+            android:title="Seleccionar tema"
+            android:summary="Permite seleccionar un tema de la lista y cambiar el diseño de la aplicación"
+            android:entries="@array/array_themes"
+            android:entryValues="@array/array_themes"
+            />
+    </PreferenceCategory>
+
 
 </PreferenceScreen>
